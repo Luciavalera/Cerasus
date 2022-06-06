@@ -1,23 +1,23 @@
 <template>
-  <div>
+  <div class="body-table">
       <table>
             <tr class="titulo-cabecera">
-              <th>ID</th>
-              <th>Evento</th>
-              <th>Comida</th>
-              <th>Invitados</th>
-              <th>Lugar</th>
-              <th>NombreApellidos</th>
-              <th>Mensaje</th>
+              <th class="id">ID</th>
+              <th class="evento">Evento</th>
+              <th class="comida">Comida</th>
+              <th class="invitados">Invitados</th>
+              <th class="lugar">Lugar</th>
+              <th class="nombre">NombreApellidos</th>
+              <th class="mensaje">Mensaje</th>
             </tr>
             <tr class="info-presupuesto" v-for="(presupuesto, index) in listaFormulario" :key="index">
-                <td>{{ presupuesto.id }}</td>
-                <td>{{ presupuesto.evento }}</td>
-                <td>{{ presupuesto.comida }}</td>
-                <td>{{ presupuesto.invitados }}</td>
-                <td>{{ presupuesto.lugar }}</td>
-                <td>{{ presupuesto.NombreApellidos }}</td>
-                <td>{{ presupuesto.mensaje }}</td>
+                <td class="border-info">{{ presupuesto.id }}</td>
+                <td class="border-info">{{ presupuesto.evento }}</td>
+                <td class="border-info">{{ presupuesto.comida }}</td>
+                <td class="border-info">{{ presupuesto.invitados }}</td>
+                <td class="border-info">{{ presupuesto.lugar }}</td>
+                <td class="border-info">{{ presupuesto.nombreApellidos }}</td>
+                <td class="border-info">{{ presupuesto.mensaje }}</td>
             </tr>
       </table>
   </div>
@@ -48,12 +48,51 @@ export default {
 
 <style>
 
+.body-table{
+    height: auto;
+    margin-bottom: 50px;
+}
+
 table{
     margin: 0 auto;
 }
 
 .titulo-cabecera{
-    border: 1px black solid;
+  background-color: black;
+  color: white;
+  border-style: 1px black solid;
+}
+
+th.id{
+  width: 50px;
+}
+
+th.evento{
+  width: 170px;
+}
+
+th.comida{
+  width: 100px;
+}
+
+th.invitados{
+  width: 100px;
+}
+
+th.lugar{
+  width: 200px;
+}
+
+th.nombre{
+  width: 150px;
+}
+
+th.mensaje{
+  width: 220px;
+}
+
+.border-info{
+  border: 1px black solid;
 }
 
 </style>
