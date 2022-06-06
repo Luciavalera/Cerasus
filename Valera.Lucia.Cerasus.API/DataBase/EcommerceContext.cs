@@ -14,10 +14,8 @@ namespace Valera.Lucia.Cerasus.API.DataBase
         {
 
         }
-        public DbSet<Producto> Productos { get; set; }
         public DbSet<Lugar> Lugares { get; set; }
         public DbSet<Comida> Comidas { get; set; }
-        public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Suscriptor> Suscriptores { get; set; }
         public DbSet<Equipo> Equipos { get; set; }
         public DbSet<Contacto> Contactos { get; set; }
