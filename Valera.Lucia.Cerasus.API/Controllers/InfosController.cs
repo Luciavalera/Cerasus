@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Valera.Lucia.Cerasus.API.DataBase;
 using Valera.Lucia.Cerasus.API.Models;
 
@@ -12,47 +12,47 @@ namespace Valera.Lucia.Cerasus.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductoController : ControllerBase
+    public class InfosController : ControllerBase
     {
         private readonly EcommerceContext _context;
 
-        public ProductoController(EcommerceContext context)
+        public InfosController(EcommerceContext context)
         {
             _context = context;
         }
 
-        // GET: api/Productoes
+        // GET: api/Info
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Producto>>> GetProductos()
+        public async Task<ActionResult<IEnumerable<Info>>> GetInfos()
         {
-            return await _context.Productos.ToListAsync();
+            return await _context.Infos.ToListAsync();
         }
 
-        // GET: api/Productoes/5
+        // GET: api/Info/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Producto>> GetProducto(int id)
+        public async Task<ActionResult<Info>> GetInfo(int id)
         {
-            var producto = await _context.Productos.FindAsync(id);
+            var info = await _context.Infos.FindAsync(id);
 
-            if (producto == null)
+            if (info == null)
             {
                 return NotFound();
             }
 
-            return producto;
+            return info;
         }
 
-        // PUT: api/Productoes/5
+        // PUT: api/Info/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProducto(int id, Producto producto)
+        public async Task<IActionResult> PutInfo(int id, Info info)
         {
-            if (id != producto.Id)
+            if (id != info.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(producto).State = EntityState.Modified;
+            _context.Entry(info).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace Valera.Lucia.Cerasus.API.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ProductoExists(id))
+                if (!InfoExists(id))
                 {
                     return NotFound();
                 }
@@ -73,36 +73,36 @@ namespace Valera.Lucia.Cerasus.API.Controllers
             return NoContent();
         }
 
-        // POST: api/Productoes
+        // POST: api/Info
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Producto>> PostProducto(Producto producto)
+        public async Task<ActionResult<Info>> PostInfo(Info info)
         {
-            _context.Productos.Add(producto);
+            _context.Infos.Add(info);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetProducto", new { id = producto.Id }, producto);
+            return CreatedAtAction("GetInfo", new { id = info.Id }, info);
         }
 
-        // DELETE: api/Productoes/5
+        // DELETE: api/Info/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProducto(int id)
+        public async Task<IActionResult> DeleteInfo(int id)
         {
-            var producto = await _context.Productos.FindAsync(id);
-            if (producto == null)
+            var info = await _context.Infos.FindAsync(id);
+            if (info == null)
             {
                 return NotFound();
             }
 
-            _context.Productos.Remove(producto);
+            _context.Infos.Remove(info);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool ProductoExists(int id)
+        private bool InfoExists(int id)
         {
-            return _context.Productos.Any(e => e.Id == id);
+            return _context.Infos.Any(e => e.Id == id);
         }
     }
 }

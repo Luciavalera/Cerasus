@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Valera.Lucia.Cerasus.API.DataBase;
 
 namespace Valera.Lucia.Cerasus.API.Migrations
 {
     [DbContext(typeof(EcommerceContext))]
-    partial class EcommerceContextModelSnapshot : ModelSnapshot
+    [Migration("20220603161123_Create25")]
+    partial class Create25
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -96,23 +98,23 @@ namespace Valera.Lucia.Cerasus.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Comida")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Evento")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Invitados")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Lugar")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Mensaje")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("NombreApellidos")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("PrecioComida")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("PrecioLugar")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 

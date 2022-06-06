@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Valera.Lucia.Cerasus.API.DataBase;
 
 namespace Valera.Lucia.Cerasus.API.Migrations
 {
     [DbContext(typeof(EcommerceContext))]
-    partial class EcommerceContextModelSnapshot : ModelSnapshot
+    [Migration("20220603134518_Create24")]
+    partial class Create24
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -90,6 +92,20 @@ namespace Valera.Lucia.Cerasus.API.Migrations
                     b.ToTable("Equipos");
                 });
 
+            modelBuilder.Entity("Valera.Lucia.Cerasus.API.Models.Filosofia", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Descripcion")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Filosofias");
+                });
+
             modelBuilder.Entity("Valera.Lucia.Cerasus.API.Models.Formulario", b =>
                 {
                     b.Property<int>("Id")
@@ -117,6 +133,20 @@ namespace Valera.Lucia.Cerasus.API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Formularios");
+                });
+
+            modelBuilder.Entity("Valera.Lucia.Cerasus.API.Models.Home", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Descripcion")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Homes");
                 });
 
             modelBuilder.Entity("Valera.Lucia.Cerasus.API.Models.Info", b =>
@@ -160,25 +190,6 @@ namespace Valera.Lucia.Cerasus.API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Lugares");
-                });
-
-            modelBuilder.Entity("Valera.Lucia.Cerasus.API.Models.Presupuesto", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("FormularioId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Total")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("FormularioId");
-
-                    b.ToTable("Presupuestos");
                 });
 
             modelBuilder.Entity("Valera.Lucia.Cerasus.API.Models.Producto", b =>
@@ -249,15 +260,6 @@ namespace Valera.Lucia.Cerasus.API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Usuarios");
-                });
-
-            modelBuilder.Entity("Valera.Lucia.Cerasus.API.Models.Presupuesto", b =>
-                {
-                    b.HasOne("Valera.Lucia.Cerasus.API.Models.Formulario", "Formulario")
-                        .WithMany()
-                        .HasForeignKey("FormularioId");
-
-                    b.Navigation("Formulario");
                 });
 
             modelBuilder.Entity("Valera.Lucia.Cerasus.API.Models.Producto", b =>

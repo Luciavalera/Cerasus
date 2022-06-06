@@ -11,6 +11,5 @@ namespace Valera.Lucia.Cerasus.API.Models
         public string Nombre { get; set; }
         public string Puesto { get; set; }
         public string Lema { get; set; }
-        public string Perfil { get; set; }
     }
 }

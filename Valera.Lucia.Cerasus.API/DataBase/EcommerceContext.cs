@@ -19,13 +19,11 @@ namespace Valera.Lucia.Cerasus.API.DataBase
         public DbSet<Comida> Comidas { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Suscriptor> Suscriptores { get; set; }
-        public DbSet<Filosofia> Filosofias { get; set; }
         public DbSet<Equipo> Equipos { get; set; }
-        public DbSet<Boda> Bodas { get; set; }
-        public DbSet<Comunion> Comuniones { get; set; }
         public DbSet<Contacto> Contactos { get; set; }
         public DbSet<Colaborador> Colaboradores { get; set; }
-        public DbSet<Corporativo> Corporativos { get; set; }
-
+        public DbSet<Formulario> Formularios { get; set; }
+        public DbSet<Info> Infos { get; set; }
+        public DbSet<Presupuesto> Presupuestos { get; set; }
     }
 }
