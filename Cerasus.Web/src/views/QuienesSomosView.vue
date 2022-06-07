@@ -194,6 +194,7 @@ export default {
     .content-perfil{
         display: flex;
         justify-content: center;
+        justify-content: space-around;
         flex-wrap: wrap;
         color: white
     }

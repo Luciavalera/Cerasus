@@ -48,7 +48,7 @@
                         <p class="colab-title"><b>Decoración:</b></p>
                         <div class="colab-box-logo-content">
                             <div class="colab-box-logo">
-                                <img class="colab-logo" src="../assets/Colaboradores/Catering/Guian.jpg">
+                                <img class="colab-logo" src="../assets/Colaboradores/Decoracion/Jara.png">
                                 {{colaborador[2].nombre}}
                             </div>
                         </div>
