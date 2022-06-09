@@ -224,7 +224,7 @@ textarea {
 }
 
 .estimacion{
-  width: 45%;
+  width: 50%;
   text-align: center;
   font-size: 19px;
 }
