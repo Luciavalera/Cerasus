@@ -1,0 +1,18 @@
+[
+    {
+        "nombre": "Habitat Sella",
+        "precio": "500"
+    },
+    {
+        "nombre": "Castillo Bonavia",
+        "precio": "450"
+    },
+    {
+        "nombre": "Jardines del Monasterio",
+        "precio": "470"
+    },
+    {
+        "nombre": "Villa Santa Ana",
+        "precio": "400"
+    }
+]

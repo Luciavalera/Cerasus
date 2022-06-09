@@ -1,0 +1,22 @@
+[
+    {
+        "nombre": "Raquel Muñoz",
+        "lema": "Cada detalle cuenta para que sea único",
+        "puesto": "Decoradora"
+    },
+    {
+        "nombre": "Sonia Fernández",
+        "lema": "Un buen orden es la base de cada proyecto",
+        "puesto": "Coordinadora"
+    },
+    {
+        "nombre": "Marta Pardo",
+        "lema": "Sé tan bueno que no puedan ignorarte",
+        "puesto": "Responsable de comunicación"
+    },
+    {
+        "nombre": "Marcos Navarro",
+        "lema": "No me interesa la fotografía, sino los recuerdos",
+        "puesto": "Fotógrafo"
+    }
+]
